@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Nov 2023 pada 08.12
+-- Waktu pembuatan: 29 Nov 2023 pada 08.39
 -- Versi server: 10.4.32-MariaDB-log
 -- Versi PHP: 8.0.30
 
@@ -88,7 +88,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_login`, `user`, `pass`, `id_member`) VALUES
-(1, 'admin', '202cb962ac59075b964b07152d234b70', 1);
+(1, 'rovy', '202cb962ac59075b964b07152d234b70', 1);
 
 -- --------------------------------------------------------
 
