@@ -28,7 +28,7 @@
 						<table class="table table-striped">
 							<form action="fungsi/edit/edit.php?barang=edit" method="POST">
 								<tr>
-									<td>ID Barang</td>
+									<td>ID Obat</td>
 									<td><input type="text" readonly="readonly" class="form-control" value="<?php echo $hasil['id_barang'];?>" name="id"></td>
 								</tr>
 								<tr>
@@ -65,7 +65,9 @@
 										<select name="satuan" class="form-control">
 											<option value="<?php echo $hasil['satuan_barang'];?>"><?php echo $hasil['satuan_barang'];?></option>
 											<option value="#">Pilih Satuan</option>
-											<option value="PCS">PCS</option>
+											<option value="PCS">Tablet</option>
+											<option value="PCS">Minyak</option>
+											<option value="PCS">Cair</option>
 										</select>
 									</td>
 								</tr>

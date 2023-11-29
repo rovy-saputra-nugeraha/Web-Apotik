@@ -42,11 +42,9 @@
 								<div class="panel-body">
 									<div id="hasil_cari"></div>
 									<div id="tunggu"></div>
-									
 								</div>
 							</div>
 						</div>
-						
 
 						<div class="col-sm-12">
 							<div class="panel panel-primary">
@@ -201,7 +199,6 @@
               </div>
           </section>
       </section>
-	
 
 <script>
 // AJAX call for autocomplete 

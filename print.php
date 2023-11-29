@@ -48,7 +48,7 @@
 					</div>
 					<div class="clearfix"></div>
 					<center>
-						<p>Terima Kasih Telah berbelanja di toko kami !</p>
+						<p>Terima Kasih Telah Berbelanja di Apotik Kami !</p>
 					</center>
 				</div>
 				<div class="col-sm-4"></div>

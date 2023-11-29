@@ -28,7 +28,7 @@
 						<table class="table table-striped">
 							<form action="fungsi/edit/edit.php?barang=edit" method="POST">
 								<tr>
-									<td>ID Barang</td>
+									<td>ID Obat</td>
 									<td><input type="text" readonly="readonly" class="form-control" value="<?php echo $hasil['id_barang'];?>" name="id"></td>
 								</tr>
 								<tr>

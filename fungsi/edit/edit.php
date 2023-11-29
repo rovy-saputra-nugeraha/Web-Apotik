@@ -197,7 +197,7 @@ if(!empty($_SESSION['admin'])){
 	?>
 		<table class="table table-stripped" width="100%" id="example2">
 			<tr>
-				<th>ID Barang</th>
+				<th>ID Obat</th>
 				<th>Nama Barang</th>
 				<th>Merk</th>
 				<th>Harga Jual</th>

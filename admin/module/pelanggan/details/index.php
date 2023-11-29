@@ -32,7 +32,7 @@
 						<?php }?>
 						<table class="table table-striped">
 								<tr>
-									<td>ID Barang</td>
+									<td>ID Obat</td>
 									<td><?php echo $hasil['id_barang'];?></td>
 								</tr>
 								<tr>

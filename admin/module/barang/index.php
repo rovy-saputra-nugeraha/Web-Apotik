@@ -28,7 +28,7 @@
 						<?php }?>
 						
 						<?php 
-							$sql=" select * from barang where stok <= 3";
+							$sql=" select * from barang where stok <= 30";
 							$row = $config -> prepare($sql);
 							$row -> execute();
 							$r = $row -> rowCount();
@@ -37,7 +37,7 @@
 						<?php
 								echo "
 								<div class='alert alert-warning'>
-									<span class='glyphicon glyphicon-info-sign'></span> Ada <span style='color:red'>$r</span> barang yang Stok tersisa sudah kurang dari 3 items. silahkan pesan lagi !!
+									<span class='glyphicon glyphicon-info-sign'></span> Ada <span style='color:red'>$r</span> Obat yang Stok tersisa sudah kurang dari 30 items. silahkan pesan lagi !!
 									<span class='pull-right'><a href='index.php?page=barang&stok=yes'>Cek Barang <i class='fa fa-angle-double-right'></i></a></span>
 								</div>
 								";	
@@ -63,9 +63,9 @@
 								<thead>
 									<tr style="background:#DFF0D8;color:#333;">
 										<th>No.</th>
-										<th>ID Barang</th>
+										<th>ID Obat</th>
 										<th>Kategori</th>
-										<th>Nama Barang</th>
+										<th>Nama Obat</th>
 										<th>Merk</th>
 										<th>Stok</th>
 										<th>Harga Beli</th>
@@ -107,7 +107,7 @@
 										<td>Rp.<?php echo number_format($isi['harga_jual']);?>,-</td>
 										<td> <?php echo $isi['satuan_barang'];?></td>
 										<td>
-											<?php if($isi['stok'] <=  '3'){?>
+											<?php if($isi['stok'] <=  '30'){?>
 												<form method="POST" action="fungsi/edit/edit.php?stok=edit">
 													<input type="text" name="restok" class="form-control">
 													<input type="hidden" name="id" value="<?php echo $isi['id_barang'];?>" class="form-control">
@@ -168,7 +168,7 @@
 												$format = $lihat -> barang_id();
 											?>
 											<tr>
-												<td>ID Barang</td>
+												<td>ID Obat</td>
 												<td><input type="text" readonly="readonly" required value="<?php echo $format;?>" class="form-control"  name="id"></td>
 											</tr>
 											<tr>
@@ -183,8 +183,8 @@
 												</td>
 											</tr>
 											<tr>
-												<td>Nama Barang</td>
-												<td><input type="text" placeholder="Nama Barang" required class="form-control" name="nama"></td>
+												<td>Nama Obat</td>
+												<td><input type="text" placeholder="Nama Obat" required class="form-control" name="nama"></td>
 											</tr>
 											<tr>
 												<td>Merk Barang</td>

@@ -141,7 +141,7 @@
 								<thead>
 									<tr style="background:#DFF0D8;color:#333;">
 										<th> No</th>
-										<th> ID Barang</th>
+										<th> ID Obat</th>
 										<th> Nama Barang</th>
 										<th style="width:10%;"> Jumlah</th>
 										<th style="width:10%;"> Modal</th>
