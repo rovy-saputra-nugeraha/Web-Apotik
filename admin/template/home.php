@@ -38,7 +38,7 @@
 					  <div class="col-md-3">
                       		<div class="panel panel-primary">
                       			<div class="panel-heading">
-						  			<h5><i class="fa fa-desktop"></i> Nama Barang</h5>
+						  			<h5><i class="fa fa-desktop"></i> Nama Obat</h5>
                       			</div>
                       			<div class="panel-body">
 									<center><h1><?php echo number_format($hasil_barang);?></h1></center>
@@ -101,9 +101,9 @@
 				<div id="calendar" class="mb">
 					<div class="panel green-panel no-margin">
 						<div class="panel-body">
-							<div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+							<div id="date-popover" class="popover top" style="cursor: pointer; margin-left: 33%; margin-top: -50px; width: 175px;">
 								<div class="arrow"></div>
-								<h3 class="popover-title" style="disadding: none;"></h3>
+								<h3 class="popover-title"></h3>
 								<div id="date-popover-content" class="popover-content"></div>
 							</div>
 							<div id="my-calendar"></div>
@@ -111,7 +111,7 @@
 					</div>
 				</div><!-- / calendar -->
 			  </div><!-- /col-lg-3 -->
-		  </div><! --/row -->
+		  </div>
 		 <div class="clearfix" style="padding-top:18%;"></div>
 	  </section>
   </section>

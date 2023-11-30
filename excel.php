@@ -50,7 +50,7 @@
                 <tr bgcolor="yellow">
                     <th> No</th>
                     <th> ID Obat</th>
-                    <th> Nama Barang</th>
+                    <th> Nama Obat</th>
                     <th style="width:10%;"> Jumlah</th>
                     <th style="width:10%;"> Modal</th>
                     <th style="width:10%;"> Total</th>

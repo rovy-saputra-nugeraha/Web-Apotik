@@ -25,7 +25,7 @@
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
+                          <i class="fa fa-inbox"></i>
                           <span>Master <span style="padding-left:2px;"> <i class="fa fa-angle-down"></i></span></span>
                       </a>
 
@@ -43,7 +43,7 @@
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
+                          <i class="fa fa-shopping-cart"></i>
                           <span>Transaksi <span style="padding-left:2px;"> <i class="fa fa-angle-down"></i></span></span>
                       </a>
                       <ul class="sub">
@@ -53,13 +53,24 @@
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
+                          <i class="fa fa-folder-open"></i>
                           <span>Laporan<span style="padding-left:2px;"> <i class="fa fa-angle-down"></i></span></span>
                       </a>
                       <ul class="sub">
                           <li><a  href="index.php?page=laporan">Laporan Penjualan</a></li>
                       </ul>
                   </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-spinner"></i>
+                          <span>Prediksi<span style="padding-left:2px;"> <i class="fa fa-angle-down"></i></span></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="index.php?page=laporan">Prediksi Obat</a></li>
+                      </ul>
+                  </li>
+
 
                   <li class="sub-menu">
                       <a href="javascript:;" >

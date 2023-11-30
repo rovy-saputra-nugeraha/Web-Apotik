@@ -30,7 +30,7 @@
 									<h4><i class="fa fa-search"></i> Cari Barang</h4>
 								</div>
 								<div class="panel-body">
-									<input type="text" id="cari" class="form-control" name="cari" placeholder="Masukan : Kode / Nama Barang  [ENTER]">
+									<input type="text" id="cari" class="form-control" name="cari" placeholder="Masukan : Kode / Nama Obat  [ENTER]">
 								</div>
 							</div>
 						</div>
@@ -66,7 +66,7 @@
 											<thead>
 												<tr>
 													<td> No</td>
-													<td> Nama Barang</td>
+													<td> Nama Obat</td>
 													<td style="width:10%;"> Jumlah</td>
 													<td style="width:20%;"> Total</td>
 													<td> Kasir</td>

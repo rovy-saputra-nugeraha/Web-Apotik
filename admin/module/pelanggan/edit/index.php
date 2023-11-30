@@ -44,7 +44,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td>Nama Barang</td>
+									<td>Nama Obat</td>
 									<td><input type="text" class="form-control" value="<?php echo $hasil['nama_barang'];?>" name="nama"></td>
 								</tr>
 								<tr>

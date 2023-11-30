@@ -65,7 +65,7 @@
 										<th>No.</th>
 										<th>ID Obat</th>
 										<th>Kategori</th>
-										<th>Nama Barang</th>
+										<th>Nama Obat</th>
 										<th>Merk</th>
 										<th>Stok</th>
 										<th>Harga Beli</th>
@@ -183,8 +183,8 @@
 												</td>
 											</tr>
 											<tr>
-												<td>Nama Barang</td>
-												<td><input type="text" placeholder="Nama Barang" required class="form-control" name="nama"></td>
+												<td>Nama Obat</td>
+												<td><input type="text" placeholder="Nama Obat" required class="form-control" name="nama"></td>
 											</tr>
 											<tr>
 												<td>Merk Barang</td>
