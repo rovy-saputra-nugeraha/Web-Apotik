@@ -47,6 +47,14 @@ if(!empty($_SESSION['admin'])){
 		$sql = 'UPDATE barang SET stok=? WHERE id_barang=?';
 		$row = $config -> prepare($sql);
 		$row -> execute($data);
+		
+		$bulan = date("m");
+
+		// update arsip barang
+		$sql = 'UPDATE arsip_barang SET stok = ? WHERE id_barang=? and nama_bulan = ?';
+		$row = $config->prepare($sql);
+		$row->execute([(int)$stok, (string)$id, $bulan]);
+
 		echo '<script>window.location="../../index.php?page=barang&success-stok=stok-data"</script>';
 	}
 
@@ -74,6 +82,18 @@ if(!empty($_SESSION['admin'])){
 				harga_beli=?, harga_jual=?, satuan_barang=?, stok=?, tgl_update=?  WHERE id_barang=?';
 		$row = $config -> prepare($sql);
 		$row -> execute($data);
+
+		// update arsip barang
+		require_once __DIR__ . '/../../admin/module/prediksi/helper/Helper.php';
+
+		$bulan = explode(" ", $tgl);
+
+		$angkaBulan = Helper::getAngkaBulan($bulan[1]);
+
+		$sql = 'UPDATE arsip_barang SET stok = ? WHERE id_barang=? and nama_bulan = ?';
+		$row = $config->prepare($sql);
+		$row->execute([(int)$stok, (string)$id, $angkaBulan]);
+
 		echo '<script>window.location="../../index.php?page=barang/edit&barang='.$id.'&success=edit-data"</script>';
 	}
 
