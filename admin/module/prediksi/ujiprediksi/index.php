@@ -13,17 +13,17 @@
 <?php
 
     // hapus arsip jika bulan depan adalah bulan yang data stok obatnya akan diprediksi (karna semua datanya belum ada jadi dikomen dulu)
-	$bulanHapus = (int)date("m");
+	// $bulanHapus = (int)date("m");
     
-	$bulanHapus = $bulanHapus + 1;
-    if ($bulanHapus == 13){
-        $bulanHapus = 1;
-    }
+	// $bulanHapus = $bulanHapus + 1;
+    // if ($bulanHapus == 13){
+    //     $bulanHapus = 1;
+    // }
 
-    require_once __DIR__ . '/../../../../config.php';
+    // require_once __DIR__ . '/../../../../config.php';
     
-    $statement = $config->prepare("DELETE FROM arsip_barang WHERE nama_bulan = ?");
-    $statement->execute([$bulanHapus]);
+    // $statement = $config->prepare("DELETE FROM arsip_barang WHERE nama_bulan = ?");
+    // $statement->execute([$bulanHapus]);
     
     // inisialisasi variabel
     $X = [];
@@ -44,7 +44,10 @@
     $sigmaX_Xbar2 = 0;
 
     // bulan prediksi (buka komen dibawah ini jika data stok obat di bulan 1 - 12 sudah ada)
-    $bulanPrediksi = $bulanHapus;
+    // $bulanPrediksi = $bulanHapus;
+
+    // bulan prediksi
+    $bulanPrediksi = 10;    
 
     try {
 
@@ -107,7 +110,7 @@
               <div class="row">
                   <div class="col-lg-12 main-chart">
 					  	<a href="index.php?page=prediksi"><button class="btn btn-primary"><i class="fa fa-angle-left"></i> Balik </button></a>
-						<h3>Prediksi Stok Obat <?= $hasil['nama_barang'] ?>   </h3>
+						<h3>Uji Prediksi Stok Obat <?= $hasil['nama_barang'] ?>  (Data ini diambil dari bulan 1-9)</h3>
                         <?php if (isset($e)){ ?>
                             <div class="alert alert-danger" role="alert">
                                 Data Stok Obat di tiap bulan kurang banyak, silahkan menunggu sampai data stok obat di tiap bulan tersedia!
