@@ -27,22 +27,13 @@
         <script type="text/javascript" src="assets/datatables/dataTables.bootstrap.js"></script>
         <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
     <style>
-		.header{background:#00008B; color:#fff;}
+		.header{background:#051153; color:#fff;}
 		#main-content{ background:#fff;}
 		#hidden {display:none}
 	</style>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
 	<section id="container" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-      <!--header start-->
       <header class="header black-bg">
               <div class="sidebar-toggle-box">
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
@@ -56,9 +47,10 @@
                 <!--  notification end -->
             </div>
             <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" onclick="javascript: return confirm('Ingin Logout ?');" href="logout.php">Logout</a></li>
-            	</ul>
+                <ul class="nav pull-right top-menu">
+                    <li><a class="logout" onclick="javascript: return confirm('Ingin Logout ?');" href="logout.php" style="color: red;">Logout</a></li>
+                </ul>
             </div>
+
         </header>
       <!--header end-->
