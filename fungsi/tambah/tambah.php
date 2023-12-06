@@ -36,6 +36,22 @@ if(!empty($_SESSION['admin'])){
 			    VALUES (?,?,?,?,?,?,?,?,?) ';
 		$row = $config -> prepare($sql);
 		$row -> execute($data);
+
+
+		// masukin ke arsip barang
+		$sql2 = 'SELECT * FROM barang WHERE id_barang = ?';
+		$row = $config->prepare($sql2);
+		$row->execute([$id]);
+		$value = $row->fetch();
+
+		require_once __DIR__ . '/../../admin/module/prediksi/helper/Helper.php';
+		$namaBulan = explode(" ", $value['tgl_input']);
+
+		$bulan = Helper::getAngkaBulan($namaBulan[1]);
+
+		$sql = 'INSERT INTO arsip_barang(nama_barang, nama_bulan, stok, id_barang) VALUES (?, ?, ?, ?)';
+		$row = $config->prepare($sql);
+		$row->execute([$value['nama_barang'], $bulan, $value['stok'], $value['id_barang']]);
 		echo '<script>window.location="../../index.php?page=barang&success=tambah-data"</script>';
 	}
 	if(!empty($_GET['jual'])){

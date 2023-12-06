@@ -3,8 +3,8 @@
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="main-content">
+      <!--main content start-->  
+	  <section id="main-content">
           <section class="wrapper">
 
               <div class="row">
@@ -64,7 +64,7 @@
 										<td>Rp.<?php echo number_format($isi['harga_jual']);?>,-</td>
 										<td> <?php echo $isi['satuan_barang'];?></td>
 										<td>
-                                            <a href="index.php?page=prediksi/detail&barang=<?= $isi['id_barang'] ?>"><button class="btn btn-primary btn-xs">Prediksi</button></a>
+											<a href="index.php?page=prediksi/detailprediksi&barang=<?= $isi['id_barang'] ?>"><button class="btn btn-success btn-xs">Prediksi</button></a>
                                         </td>
                                     </tr>
 								<?php 

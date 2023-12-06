@@ -236,4 +236,13 @@
 				$hasil = $row -> fetch();
 				return $hasil;
 			}
+
+			function arsip_barang($id_barang){
+				$sql = "SELECT * FROM arsip_barang WHERE id_barang = ? ORDER BY nama_bulan ASC";
+				$row = $this->db->prepare($sql);
+				$row->execute([$id_barang]);
+
+				$hasil = $row->fetchAll();
+				return $hasil;
+			}
 	 }
