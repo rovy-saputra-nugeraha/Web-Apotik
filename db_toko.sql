@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 29 Nov 2023 pada 08.39
--- Versi server: 10.4.32-MariaDB-log
--- Versi PHP: 8.0.30
+-- Host: localhost
+-- Generation Time: Dec 06, 2023 at 07:35 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang`
+-- Table structure for table `arsip_barang`
+--
+
+CREATE TABLE `arsip_barang` (
+  `id_arsip` int(11) NOT NULL,
+  `nama_barang` text NOT NULL,
+  `nama_bulan` int(11) NOT NULL,
+  `stok` varchar(10) NOT NULL,
+  `id_barang` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `arsip_barang`
+--
+
+INSERT INTO `arsip_barang` (`id_arsip`, `nama_barang`, `nama_bulan`, `stok`, `id_barang`) VALUES
+(10, 'Proclozoam', 2, '3042', 'BR001'),
+(11, 'Proclozoam', 3, '2403', 'BR001'),
+(12, 'Proclozoam', 4, '1718', 'BR001'),
+(13, 'Proclozoam', 5, '1033', 'BR001'),
+(14, 'Proclozoam', 6, '1643', 'BR001'),
+(15, 'Proclozoam', 7, '1225', 'BR001'),
+(16, 'Proclozoam', 8, '455', 'BR001'),
+(20, 'Proclozoam', 1, '2704', 'BR001'),
+(22, 'Proclozoam', 9, '341', 'BR001');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `barang`
 --
 
 CREATE TABLE `barang` (
@@ -42,17 +71,17 @@ CREATE TABLE `barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `barang`
+-- Dumping data for table `barang`
 --
 
 INSERT INTO `barang` (`id`, `id_barang`, `id_kategori`, `nama_barang`, `merk`, `harga_beli`, `harga_jual`, `satuan_barang`, `stok`, `tgl_input`, `tgl_update`) VALUES
-(16, 'BR001', 19, 'Dores 5 Mg', '-', '3000', '6000', 'PCS', '22', '27 November 2023, 13:59', '27 November 2023, 14:11'),
-(17, 'BR002', 19, 'Rizodal 5 Mg', '-', '2000', '3000', 'PCS', '63', '27 November 2023, 14:02', NULL);
+(44, 'BR001', 19, 'Proclozoam', '-', '2000', '2500', 'PCS', '51', '6 December 2023, 12:56', '6 December 2023, 13:13'),
+(46, 'BR002', 18, 'hello world', '-', '2000', '2500', 'PCS', '98', '6 December 2023, 18:06', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -62,7 +91,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `tgl_input`) VALUES
@@ -73,7 +102,7 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `tgl_input`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
@@ -84,7 +113,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id_login`, `user`, `pass`, `id_member`) VALUES
@@ -93,7 +122,7 @@ INSERT INTO `login` (`id_login`, `user`, `pass`, `id_member`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `member`
+-- Table structure for table `member`
 --
 
 CREATE TABLE `member` (
@@ -107,7 +136,7 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `member`
+-- Dumping data for table `member`
 --
 
 INSERT INTO `member` (`id_member`, `nm_member`, `alamat_member`, `telepon`, `email`, `gambar`, `NIK`) VALUES
@@ -116,7 +145,7 @@ INSERT INTO `member` (`id_member`, `nm_member`, `alamat_member`, `telepon`, `ema
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nota`
+-- Table structure for table `nota`
 --
 
 CREATE TABLE `nota` (
@@ -132,7 +161,7 @@ CREATE TABLE `nota` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penjualan`
+-- Table structure for table `penjualan`
 --
 
 CREATE TABLE `penjualan` (
@@ -147,7 +176,7 @@ CREATE TABLE `penjualan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `toko`
+-- Table structure for table `toko`
 --
 
 CREATE TABLE `toko` (
@@ -159,7 +188,7 @@ CREATE TABLE `toko` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `toko`
+-- Dumping data for table `toko`
 --
 
 INSERT INTO `toko` (`id_toko`, `nama_toko`, `alamat_toko`, `tlp`, `nama_pemilik`) VALUES
@@ -170,89 +199,101 @@ INSERT INTO `toko` (`id_toko`, `nama_toko`, `alamat_toko`, `tlp`, `nama_pemilik`
 --
 
 --
--- Indeks untuk tabel `barang`
+-- Indexes for table `arsip_barang`
+--
+ALTER TABLE `arsip_barang`
+  ADD PRIMARY KEY (`id_arsip`);
+
+--
+-- Indexes for table `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `login`
+-- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_login`);
 
 --
--- Indeks untuk tabel `member`
+-- Indexes for table `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`id_member`);
 
 --
--- Indeks untuk tabel `nota`
+-- Indexes for table `nota`
 --
 ALTER TABLE `nota`
   ADD PRIMARY KEY (`id_nota`);
 
 --
--- Indeks untuk tabel `penjualan`
+-- Indexes for table `penjualan`
 --
 ALTER TABLE `penjualan`
   ADD PRIMARY KEY (`id_penjualan`);
 
 --
--- Indeks untuk tabel `toko`
+-- Indexes for table `toko`
 --
 ALTER TABLE `toko`
   ADD PRIMARY KEY (`id_toko`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `barang`
+-- AUTO_INCREMENT for table `arsip_barang`
+--
+ALTER TABLE `arsip_barang`
+  MODIFY `id_arsip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT untuk tabel `login`
+-- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `member`
+-- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
   MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `nota`
+-- AUTO_INCREMENT for table `nota`
 --
 ALTER TABLE `nota`
   MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT untuk tabel `penjualan`
+-- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT untuk tabel `toko`
+-- AUTO_INCREMENT for table `toko`
 --
 ALTER TABLE `toko`
   MODIFY `id_toko` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
