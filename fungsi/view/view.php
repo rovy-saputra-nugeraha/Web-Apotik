@@ -245,4 +245,15 @@
 				$hasil = $row->fetchAll();
 				return $hasil;
 			}
+
+			// uji arsip barang (untuk pengetesan data mining)
+			function uji_arsip_barang($id_barang){
+				$sql = "SELECT * FROM uji_arsip_barang WHERE id_barang = ? ORDER BY nama_bulan ASC";
+				$row = $this->db->prepare($sql);
+
+				$row->execute([$id_barang]);
+
+				$hasil = $row->fetchAll();
+				return $hasil;
+			}
 	 }

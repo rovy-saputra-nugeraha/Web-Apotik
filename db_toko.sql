@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2023 at 07:35 PM
+-- Generation Time: Dec 08, 2023 at 11:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -47,8 +47,14 @@ INSERT INTO `arsip_barang` (`id_arsip`, `nama_barang`, `nama_bulan`, `stok`, `id
 (14, 'Proclozoam', 6, '1643', 'BR001'),
 (15, 'Proclozoam', 7, '1225', 'BR001'),
 (16, 'Proclozoam', 8, '455', 'BR001'),
-(20, 'Proclozoam', 1, '2704', 'BR001'),
-(22, 'Proclozoam', 9, '341', 'BR001');
+(22, 'Proclozoam', 9, '341', 'BR001'),
+(24, 'Proclozoam', 10, '541', 'BR001'),
+(25, 'Proclozoam', 11, '259', 'BR001'),
+(26, 'Proclozoam', 12, '672', 'BR001'),
+(27, 'Hansaplast', 12, '455', 'BR002'),
+(32, 'Hansaplast', 10, '1232', 'BR002'),
+(33, 'Hansaplast', 11, '423', 'BR002'),
+(34, 'Hansaplast', 9, '224', 'BR002');
 
 -- --------------------------------------------------------
 
@@ -76,7 +82,7 @@ CREATE TABLE `barang` (
 
 INSERT INTO `barang` (`id`, `id_barang`, `id_kategori`, `nama_barang`, `merk`, `harga_beli`, `harga_jual`, `satuan_barang`, `stok`, `tgl_input`, `tgl_update`) VALUES
 (44, 'BR001', 19, 'Proclozoam', '-', '2000', '2500', 'PCS', '51', '6 December 2023, 12:56', '6 December 2023, 13:13'),
-(46, 'BR002', 18, 'hello world', '-', '2000', '2500', 'PCS', '98', '6 December 2023, 18:06', NULL);
+(48, 'BR002', 19, 'Hansaplast', '-', '500', '1000', 'PCS', '455', '7 December 2023, 20:43', '7 December 2023, 20:57');
 
 -- --------------------------------------------------------
 
@@ -194,6 +200,35 @@ CREATE TABLE `toko` (
 INSERT INTO `toko` (`id_toko`, `nama_toko`, `alamat_toko`, `tlp`, `nama_pemilik`) VALUES
 (1, 'Apotik Bahari Farma', 'Jl.RSAL Tanjungpinang Barat', '0821', 'Pak Beni');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uji_arsip_barang`
+--
+
+CREATE TABLE `uji_arsip_barang` (
+  `id_arsip` int(11) NOT NULL,
+  `nama_barang` text NOT NULL,
+  `nama_bulan` int(11) NOT NULL,
+  `stok` varchar(10) NOT NULL,
+  `id_barang` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `uji_arsip_barang`
+--
+
+INSERT INTO `uji_arsip_barang` (`id_arsip`, `nama_barang`, `nama_bulan`, `stok`, `id_barang`) VALUES
+(1, 'Proclozoam', 1, '2704', 'BR001'),
+(2, 'Proclozoam', 2, '3042', 'BR001'),
+(3, 'Proclozoam', 3, '2403', 'BR001'),
+(4, 'Proclozoam', 4, '1718', 'BR001'),
+(5, 'Proclozoam', 5, '1033', 'BR001'),
+(6, 'Proclozoam', 6, '1643', 'BR001'),
+(7, 'Proclozoam', 7, '1225', 'BR001'),
+(8, 'Proclozoam', 8, '455', 'BR001'),
+(9, 'Proclozoam', 9, '341', 'BR001');
+
 --
 -- Indexes for dumped tables
 --
@@ -247,6 +282,12 @@ ALTER TABLE `toko`
   ADD PRIMARY KEY (`id_toko`);
 
 --
+-- Indexes for table `uji_arsip_barang`
+--
+ALTER TABLE `uji_arsip_barang`
+  ADD PRIMARY KEY (`id_arsip`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -254,13 +295,13 @@ ALTER TABLE `toko`
 -- AUTO_INCREMENT for table `arsip_barang`
 --
 ALTER TABLE `arsip_barang`
-  MODIFY `id_arsip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_arsip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -297,6 +338,12 @@ ALTER TABLE `penjualan`
 --
 ALTER TABLE `toko`
   MODIFY `id_toko` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `uji_arsip_barang`
+--
+ALTER TABLE `uji_arsip_barang`
+  MODIFY `id_arsip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
