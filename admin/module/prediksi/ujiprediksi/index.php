@@ -7,7 +7,7 @@
 <?php 
 	$id = $_GET['barang'];
 	$hasil = $lihat -> barang_edit($id);
-    $hasil_arsip = $lihat->arsip_barang($id);
+    $hasil_arsip = $lihat->uji_arsip_barang($id);
     ?>
 
 <?php
