@@ -65,7 +65,8 @@
 										<td> <?php echo $isi['satuan_barang'];?></td>
 										<td>
 											<a href="index.php?page=prediksi/detailprediksi&barang=<?= $isi['id_barang'] ?>"><button class="btn btn-success btn-xs">Prediksi</button></a>
-											<a href="index.php?page=prediksi/ujiprediksi&barang=<?= $isi['id_barang'] ?>"><button class="btn btn-success btn-xs">Uji Prediksi</button></a>
+											<a href="index.php?page=prediksi/ujiprediksi&barang=<?= $isi['id_barang'] ?>"><button class="btn btn-primary btn-xs">Uji Prediksi</button></a>
+											<a href="/Web-Apotik/admin/module/grafik/linechart.php?id_barang=<?= $isi['id_barang'] ?>"><button class="btn btn-danger btn-xs">Grafik</button></a>
                                         </td>
                                     </tr>
 								<?php 
