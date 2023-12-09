@@ -41,6 +41,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   <!-- Bootstrap core CSS -->
   <link href="/Web-Apotik/assets/css/bootstrap.css" rel="stylesheet">
   <link href="/Web-Apotik/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="/Web-Apotik/assets/img/pic/logo.jpg" />
   <style type="text/css">
     .container {
       width: 60%;

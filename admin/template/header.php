@@ -21,6 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/Web-Apotik/assets/img/pic/logo.jpg" />
 
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/datatables/jquery.dataTables.js"></script>

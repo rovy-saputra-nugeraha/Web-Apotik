@@ -37,6 +37,7 @@
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/Web-Apotik/assets/img/pic/logo.jpg" />
   <link href="assets/css/style-responsive.css" rel="stylesheet">
 
   <style>
