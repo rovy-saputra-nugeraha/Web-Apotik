@@ -75,10 +75,6 @@
                       <ul class="sub">
                           <li><a href="index.php?page=pengaturan">Pengaturan Toko</a></li>
                       </ul>
-
-                       <ul class="sub">
-                          <li><a href="index.php?page=pengaturan">Tentang Kami</a></li>
-                      </ul>
                   </li>
               </ul>
               <!-- sidebar menu end-->
