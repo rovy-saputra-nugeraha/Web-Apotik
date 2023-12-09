@@ -14,19 +14,20 @@ if (!$result) {
   die('Query Error: ' . mysqli_error($koneksi));
 }
 
-// Ambil data stok dari uji_arsip_barang berdasarkan id_barang
-$stok = mysqli_query($koneksi, "SELECT nama_bulan, stok FROM uji_arsip_barang WHERE id_barang = '$id_barang'");
+// Inisialisasi array stok untuk setiap bulan
 $stokArray = [];
 
-// Inisialisasi array stok untuk setiap bulan
-for ($i = 1; $i <= 9; $i++) {
-  $stokArray[$i] = 0;
-}
+// Inisialisasi array nama bulan
+$namaBulan = [];
 
-// Ambil data stok dan isi array stok sesuai dengan bulan
-while ($row = mysqli_fetch_assoc($stok)) {
-  $bulan = (int)$row['nama_bulan'];
-  $stokArray[$bulan] = (int)$row['stok'];
+// Inisialisasi variable nama_barang
+$nama_barang = '';
+
+// Isi array nama bulan dan stok
+while ($row = mysqli_fetch_assoc($result)) {
+  $nama_barang = $row['nama_barang']; // Ambil nama_barang dari hasil query
+  $namaBulan[] = $row['nama_bulan'];
+  $stokArray[] = (int)$row['stok'];
 }
 ?>
 
@@ -42,8 +43,38 @@ while ($row = mysqli_fetch_assoc($stok)) {
   <link href="/Web-Apotik/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <style type="text/css">
     .container {
-      width: 40%;
+      width: 60%;
+      /* Menyesuaikan ukuran container */
       margin: 15px auto;
+    }
+
+    .chart-container {
+      position: relative;
+      margin-top: 20px;
+      display: flex;
+      /* Menjadikan container flexbox */
+      align-items: center;
+      /* Posisikan item di tengah container */
+    }
+
+    #linechart {
+      max-height: 500px;
+      /* Menyesuaikan tinggi chart */
+    }
+
+    .legend-container {
+      display: flex;
+      justify-content: center;
+      /* Mengatur agar konten berada di tengah */
+      margin-top: 20px;
+      margin-left: 100px;
+      width: 100%;
+      /* Menyesuaikan lebar container dengan lebar parent */
+    }
+
+    .legend-text {
+      margin-right: 20px;
+      /* Menambah margin antara teks dan grafik */
     }
   </style>
 </head>
@@ -52,38 +83,33 @@ while ($row = mysqli_fetch_assoc($stok)) {
 
   <div class="container">
     <a href="/Web-Apotik/index.php?page=prediksi"><button class="btn btn-primary"><i class="fa fa-angle-left"></i> Balik </button></a>
-    <canvas id="linechart" width="400" height="400"></canvas>
+    <div class="chart-container">
+      <div class="legend-text"><strong>Grafik Y : </strong> Stok Obat <?php echo $nama_barang; ?></div>
+      <canvas id="linechart" width="400" height="400"></canvas>
+    </div>
+    <div class="legend-container">
+      <br>
+      <div><strong>Grafik X : </strong> Bulan Januari-September</div>
+    </div>
   </div>
 
   <script type="text/javascript">
     var ctx = document.getElementById("linechart").getContext("2d");
 
-    // Tentukan array untuk nama bulan
-    var namaBulan = ["", "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep"];
-
     // Debugging statement
     console.log("Data from PHP:", <?php echo json_encode($stokArray); ?>);
-    <?php
-    // Tambahkan pernyataan echo untuk mencetak data ke dalam console log JavaScript
-    echo 'console.log("Data from PHP:", ' . json_encode($stokArray) . ');';
-    ?>
 
     var data = {
-      labels: [<?php
-                // Generate labels untuk bulan 1 sampai 9
-                for ($i = 1; $i <= 9; $i++) {
-                  echo '"' . $namaBulan[$i] . '",';
-                }
-                ?>],
+      labels: <?php echo json_encode($namaBulan); ?>,
       datasets: [{
-        label: "stok",
+        label: "Grafik Y: Stok Obat <?php echo $nama_barang; ?>",
         fill: false,
         lineTension: 0.1,
         backgroundColor: "#29B0D0",
         borderColor: "#29B0D0",
         pointHoverBackgroundColor: "#29B0D0",
         pointHoverBorderColor: "#29B0D0",
-        data: <?php echo json_encode(array_values($stokArray)); ?>
+        data: <?php echo json_encode($stokArray); ?>
       }]
     };
 
@@ -92,10 +118,20 @@ while ($row = mysqli_fetch_assoc($stok)) {
       data: data,
       options: {
         legend: {
-          display: true
+          display: false, // Menyembunyikan legend bawaan Chart.js
         },
         scales: {
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Grafik X: Nama Bulan'
+            }
+          }],
           yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Grafik Y: Stok Obat'
+            },
             ticks: {
               beginAtZero: true
             }
