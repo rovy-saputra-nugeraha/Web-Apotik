@@ -136,7 +136,6 @@
 						</table>
                         <div class="alert alert-warning" role="alert">
                             Catatan: <br>Data prediksi stok obat dipengaruhi oleh jumlah data, semakin sedikit datanya akurasinya akan semakin rendah, sebaliknya semakin banyak datanya akurasinya akan semakin bagus. Dan prediksi ini tidak menjamin bahwa data yang diprediksi itu 100% benar.
-                                     Model ini sudah diuji menggunakan teknik K-Fold Cross Validation dengan tingkat RMSE sebesar 410.60375
                         </div>
 						<div class="clearfix" style="padding-top:16%;"></div>
 				  </div>
